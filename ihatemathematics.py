@@ -18,14 +18,18 @@ def ihatemathematics():
         numbers[3],
         numbers[4]
     )
+    a = int(a)
+    b = int(b,16)
+    c = int(c,2)
 
+    variable = eval(str(a) + s1 + str(b) + s2 + str(c))
     
+    sol_url = sol_url + str(variable)
+    submission = requests.get(sol_url)
+    submission = BeautifulSoup(submission.text, "html.parser" )
     
+    print(submission.text)
     
-    
-    print(a)
-    print(b)
-    print(c)
     
     
     
