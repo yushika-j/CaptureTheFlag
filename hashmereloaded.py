@@ -12,5 +12,5 @@ data = re.search(r"(?<=BEGIN MESSAGE -----<br />\s{9})(.*)(?=<br />)", data).gro
 
 # Compute the SHA-512 hash of the extracted message
 
-data = requests.get("http://challenges.ringzer0team.com:10014/"+hashlib.sha512(data).hexdigest(), cookies={"PHPSESSID": "8gkplmcji73umhvnourbcgmidj"}).text
+ata = requests.get("http://challenges.ringzer0team.com:10014/"+hashlib.sha512(data).hexdigest(), cookies={"PHPSESSID": "8gkplmcji73umhvnourbcgmidj"}).text
 print(data)
