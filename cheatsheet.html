@@ -1,0 +1,31 @@
+// Fig. 16.10 addressbook.js
+// Ajax-enabled address-book JavaScript code
+// URL of the web service
+
+var phoneValid = false; // indicates if the telephone is valid
+var zipValid = false; //indicates if the ZIP code is valid
+
+// get a list of names from the server and display them
+function showAddressBook() {
+    // hide the "addEntry" form and show the address book
+    document.getElementById("addEntry").style.display = "none";
+    document.getElementById("addressBook").style.display = "block";
+
+    callWebService("/getAllNames", parseData);
+} // end function showAddressBook
+
+// send the asynchronous request to the web service
+{
+    // build request URL string
+
+    // attempt to send the asynchronous request
+    try {
+        var asyncRequest = new XMLHttpRequest(); // create request
+
+        // set up callback function and store it
+        asyncRequest.addEventListener("readystatechange",
+            function () { callBack(asyncRequest); }, false);
+
+        var webServiceUrl = "/AddressBookWebService/Service.svc";
+        function callWebService(methodAndArguments, callBack)
+        var requestUrl = webServiceUrl + methodAndArguments;
