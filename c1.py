@@ -16,7 +16,7 @@ def find_unique_solutions():
             print(ops)
             expr = ''.join('{}{}{}'.format(n, op, ' ' if i == len(ops) - 1 else ' ') for i, (n, op) in enumerate(zip(nums, ops)))
             print(expr)
-            result = ast.literal_eval(expr)  # Use ast.literal_eval instead of eval
+            
             result = eval(expr)  # Added missing import for eval function
             if result > 0 and expr.count('=') == 0:  # Avoid counting expressions with '='
                 target_values.add(result)
